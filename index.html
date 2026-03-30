@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retinal Segmentation Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Retinal Vessel Segmentation Prototype</h1>
+    <p>Computer vision tool for analyzing retinal images</p>
+  </header>
+
+  <section>
+    <h2>Purpose</h2>
+    <p>
+      Retinal vessel segmentation is a tool used in ophthalmology to 
+      analyze retinal images and extracts blood vesssels. These blood 
+      vessels are important for diagnosing diseases like diabetic 
+      retinopathy and glaucoma. This prototype demonstrates a simple 
+      method to segment blood vessels from retinal images using image 
+      processing techniques.
+    </p>
+  </section>
+
+  <section>
+    <h2>Process</h2>
+    <ul>
+      <li>Convert image to grayscale using green channel to 
+        increase contrast (retinal image origninally has red tone)</li>
+      <li>Enhance contrast using CLAHE</li>
+      <li>Apply morphological operations 
+        (blackhat since vessels are darker than background,
+        using elipses that fit well with vessels)</li>
+      <li>Binary threshold to obtain vessel mask, 
+        low threshhold value used to extract faint vessels</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Results</h2>
+
+    <div class="image-container">
+      <div>
+        <h3>Original</h3>
+        <img src="images/Image_01R.jpg">
+      </div>
+
+      <div>
+        <h3>Segmented</h3>
+        <img id="segmentedImg" src="images/seg_Image_01R.jpg">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Demo</h2>
+    <button onclick="showDemo()">Run Demo</button>
+    <p id="demoText"></p>
+  </section>
+
+   <section>
+    <h2>View project on GitHub:</h2>
+    <a href="https://github.com/aariS596/retinal-segmentation-project" target="_blank">GitHub Repository</a>
+  </section>
+
+  <section>
+    <h2>Skills Used</h2>
+    <ul>
+      <li>Python (OpenCV)</li>
+      <li>Image Processing</li>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Problem Solving</li>
+    </ul>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
